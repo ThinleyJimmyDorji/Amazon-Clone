@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import SearchIcon from "@material-ui/icons/Search";
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 function Header() {
   return (
     <Container>
@@ -28,7 +29,10 @@ function Header() {
           <span class="sp1">Your</span>
           <span class="sp2">Prime</span>
         </NavItems>
-        <NavItems></NavItems>
+        <CartIcon>
+          <ShoppingBasketIcon />
+          <span>0</span>
+        </CartIcon>
       </NavMenu>
     </Container>
   );
@@ -40,6 +44,7 @@ const Container = styled.div`
   align-items: center;
   background-color: #131921;
   position: sticky;
+  justify-content: space-evenly;
   top: 0;
   z-index: 100;
 `;
@@ -62,6 +67,7 @@ const DeliveryLocation = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  cursor: pointer;
   .sp1 {
     color: white;
     font-size: 12px;
@@ -76,27 +82,51 @@ const HeadingSearch = styled.div`
   display: flex;
   align-items: center;
   border: none;
-  height: 26px;
+  height: 40px;
   margin: 0 10px;
   border-radius: 4px;
   border: 3px solid #cd9042;
   flex: 1;
+  border: 3px solid #cd9042;
+  &:active{
+
+  }
   .inp {
     border: none;
     width: 100%;
     border: none;
-    height: 26px;
+    height: 40px;
   }
   .searchIcon {
     padding: 5px;
-    height: 22px;
+    height: 36px;
     background-color: #cd9042;
-    box-shadow: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
   }
 `;
 const NavMenu = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
 `;
-const NavItems = styled(DeliveryLocation)``;
+const NavItems = styled(DeliveryLocation)`
+  margin: 0 10px;
+  cursor: pointer;
+`;
+const CartIcon = styled.div`
+  display: flex;
+  align-items: center;
+  height: 30px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+
+  span {
+    margin: 0 20px;
+  }
+`;
+
 export default Header;
