@@ -81,15 +81,13 @@ const DeliveryLocation = styled.div`
 const HeadingSearch = styled.div`
   display: flex;
   align-items: center;
-  border: none;
   height: 40px;
   margin: 0 10px;
   border-radius: 4px;
   border: 3px solid #cd9042;
   flex: 1;
-  border: 3px solid #cd9042;
-  &:active{
-
+  /* border: 3px solid #cd9042; */
+  &:active {
   }
   .inp {
     border: none;
@@ -98,12 +96,13 @@ const HeadingSearch = styled.div`
     height: 40px;
   }
   .searchIcon {
-    padding: 5px;
-    height: 36px;
-    background-color: #cd9042;
+    height: 43px;
+    background-color: #e9c46a;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
+    &:hover {
+      background-color: #cd9042;
+    }
   }
 `;
 const NavMenu = styled.div`
