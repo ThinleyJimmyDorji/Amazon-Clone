@@ -2,12 +2,19 @@ import React from "react";
 import styled from "styled-components";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import { Link } from "react-router-dom";
 function Header() {
   return (
     <Container>
-      <AppLogo>
-        <img src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="" />
-      </AppLogo>
+      <Link to="/">
+        <AppLogo>
+          <img
+            src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
+            alt=""
+          />
+        </AppLogo>
+      </Link>
+
       <DeliveryLocation>
         <span class="sp1">Deliver to</span>
         <span class="sp2">Bhutan</span>
@@ -29,10 +36,12 @@ function Header() {
           <span class="sp1">Your</span>
           <span class="sp2">Prime</span>
         </NavItems>
-        <CartIcon>
-          <ShoppingBasketIcon />
-          <span>0</span>
-        </CartIcon>
+        <Link to="/checkout">
+          <CartIcon>
+            <ShoppingBasketIcon />
+            <span>0</span>
+          </CartIcon>
+        </Link>
       </NavMenu>
     </Container>
   );
